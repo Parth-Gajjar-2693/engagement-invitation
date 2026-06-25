@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-gold: #d4af37;
+  --color-gold-light: #e8c547;
+  --color-cream: #faf7f2;
+  --color-blush: #f8e8ee;
+  --color-beige: #f5ebe0;
+  --color-rose: #e8b4b8;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    @apply bg-cream text-stone-800 antialiased overflow-x-hidden;
+    font-family: var(--font-body);
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-stone-900;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg;
+  }
+
+  .glass-gold {
+    @apply bg-white/30 backdrop-blur-xl border border-gold/20 shadow-xl;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+
+  .luxury-shadow {
+    box-shadow:
+      0 4px 30px rgba(212, 175, 55, 0.08),
+      0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+}

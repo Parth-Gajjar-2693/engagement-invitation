@@ -1,0 +1,16 @@
+{
+  "name": "Parth & Priya Engagement",
+  "short_name": "P & P Engagement",
+  "description": "Engagement invitation for Parth & Priya — 19 July 2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
