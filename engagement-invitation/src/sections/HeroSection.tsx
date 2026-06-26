@@ -7,11 +7,8 @@ import { Sparkles } from '../components/Sparkles'
 import { MagneticButton } from '../components/MagneticButton'
 import { LazyImage } from '../components/LazyImage'
 
-interface HeroSectionProps {
-  onOpenInvitation: () => void
-}
 
-export function HeroSection({ onOpenInvitation }: HeroSectionProps) {
+export function HeroSection() {
   const parallaxRef = useGsapParallax<HTMLDivElement>(0.25)
 
   const scrollToStory = () => {

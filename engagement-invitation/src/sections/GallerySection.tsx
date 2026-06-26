@@ -15,7 +15,7 @@ const spanClasses: Record<string, string> = {
 
 export function GallerySection() {
   const [lightbox, setLightbox] = useState<string | null>(null)
-  const [filter, setFilter] = useState<string>('All')
+  const [filter] = useState<string>('All')
 
   const filtered =
     filter === 'All'

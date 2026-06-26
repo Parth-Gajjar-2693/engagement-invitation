@@ -6,7 +6,6 @@ import { useCountdown } from './hooks/useCountdown'
 import { EVENT } from './constants/content'
 import { LoadingScreen } from './components/LoadingScreen'
 import { ScrollProgressBar } from './components/ScrollProgressBar'
-import { MusicButton } from './components/MusicButton'
 import { FloatingPetals } from './components/FloatingPetals'
 import { FloatingHearts } from './components/FloatingHearts'
 import { CursorGlow, MouseTrail } from './components/CursorEffects'
@@ -32,11 +31,6 @@ function App() {
     }
   }, [countdown.isComplete])
 
-  const handleOpenInvitation = useCallback(() => {
-    setShowConfetti(true)
-    document.getElementById('love-story')?.scrollIntoView({ behavior: 'smooth' })
-  }, [])
-
   const handleCountdownComplete = useCallback(() => {
     setShowConfetti(true)
   }, [])
@@ -57,7 +51,7 @@ function App() {
           <ConfettiEffect active={showConfetti} onComplete={() => setShowConfetti(false)} />
 
           <main className="relative">
-            <HeroSection onOpenInvitation={handleOpenInvitation} />
+            <HeroSection />
             <LoveStorySection />
             <GallerySection />
             <CountdownSection onComplete={handleCountdownComplete} />

@@ -1,6 +1,5 @@
 export { LoadingScreen } from './LoadingScreen'
 export { ScrollProgressBar } from './ScrollProgressBar'
-export { MusicButton } from './MusicButton'
 export { FloatingPetals } from './FloatingPetals'
 export { Sparkles } from './Sparkles'
 export { FloatingHearts } from './FloatingHearts'
