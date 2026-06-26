@@ -118,12 +118,6 @@ export function HeroSection({ onOpenInvitation }: HeroSectionProps) {
 
         <motion.div variants={fadeUp} className="flex flex-col gap-4 sm:flex-row">
           <MagneticButton
-            onClick={onOpenInvitation}
-            className="bg-gradient-to-r from-gold to-gold-light text-white shadow-lg shadow-gold/20"
-          >
-            Open Invitation ✨
-          </MagneticButton>
-          <MagneticButton
             onClick={scrollToStory}
             className="glass text-stone-700"
           >

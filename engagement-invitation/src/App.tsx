@@ -2,9 +2,8 @@ import { useState, useCallback, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useLenis } from './hooks/useLenis'
 import { useLoadingScreen } from './hooks/useLoadingScreen'
-import { useAudio } from './hooks/useLoadingScreen'
 import { useCountdown } from './hooks/useCountdown'
-import { EVENT, MUSIC_URL } from './constants/content'
+import { EVENT } from './constants/content'
 import { LoadingScreen } from './components/LoadingScreen'
 import { ScrollProgressBar } from './components/ScrollProgressBar'
 import { MusicButton } from './components/MusicButton'
@@ -18,7 +17,6 @@ import { GallerySection } from './sections/GallerySection'
 import { CountdownSection } from './sections/CountdownSection'
 import { EventDetailsSection } from './sections/EventDetailsSection'
 import { FamilySection } from './sections/FamilySection'
-import { MemoriesSection } from './sections/MemoriesSection'
 import { FooterSection } from './sections/FooterSection'
 
 function App() {
@@ -27,7 +25,6 @@ function App() {
   const countdown = useCountdown(EVENT.countdownTarget)
 
   useLenis(!isLoading)
-  const { isPlaying, isMuted, toggle } = useAudio(MUSIC_URL)
 
   useEffect(() => {
     if (countdown.isComplete) {
@@ -57,7 +54,6 @@ function App() {
           <FloatingHearts />
           <CursorGlow />
           <MouseTrail />
-          <MusicButton isPlaying={isPlaying} isMuted={isMuted} onToggle={toggle} />
           <ConfettiEffect active={showConfetti} onComplete={() => setShowConfetti(false)} />
 
           <main className="relative">
@@ -67,7 +63,6 @@ function App() {
             <CountdownSection onComplete={handleCountdownComplete} />
             <EventDetailsSection />
             <FamilySection />
-            <MemoriesSection />
             <FooterSection />
           </main>
         </>

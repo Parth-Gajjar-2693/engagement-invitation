@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiX } from 'react-icons/hi'
 import { GALLERY } from '../constants/content'
-import { fadeUp, scaleIn, viewportOnce } from '../animations'
+import { scaleIn, viewportOnce } from '../animations'
 import { SectionHeading } from '../components/SectionHeading'
 import { LazyImage } from '../components/LazyImage'
 import { cn } from '../utils/helpers'
@@ -29,31 +29,6 @@ export function GallerySection() {
       <div className="absolute inset-0 bg-gradient-to-b from-blush/20 to-cream" />
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading subtitle="Captured Moments" title="Our Gallery" />
-
-        <motion.div
-          className="mb-8 flex flex-wrap justify-center gap-2"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          {['All', ...GALLERY.categories].map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setFilter(cat)}
-              className={cn(
-                'rounded-full px-5 py-2 text-sm transition-all',
-                filter === cat
-                  ? 'bg-gold text-white shadow-md shadow-gold/20'
-                  : 'glass text-stone-600 hover:bg-white/60',
-              )}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
-
         <div className="columns-2 gap-3 md:columns-3 md:gap-4 lg:gap-5">
           {filtered.map((image, index) => (
             <motion.div
